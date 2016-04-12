@@ -1,0 +1,6 @@
+c:\users\harry alvin\documents\visual studio 2015\Projects\stringMatcher\stringMatcher\bin\Debug\stringMatcher.exe.config
+c:\users\harry alvin\documents\visual studio 2015\Projects\stringMatcher\stringMatcher\bin\Debug\stringMatcher.exe
+c:\users\harry alvin\documents\visual studio 2015\Projects\stringMatcher\stringMatcher\bin\Debug\stringMatcher.pdb
+c:\users\harry alvin\documents\visual studio 2015\Projects\stringMatcher\stringMatcher\obj\Debug\stringMatcher.csprojResolveAssemblyReference.cache
+c:\users\harry alvin\documents\visual studio 2015\Projects\stringMatcher\stringMatcher\obj\Debug\stringMatcher.exe
+c:\users\harry alvin\documents\visual studio 2015\Projects\stringMatcher\stringMatcher\obj\Debug\stringMatcher.pdb

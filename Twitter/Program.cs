@@ -18,8 +18,7 @@ namespace TwitterSample
     /// </remarks>
     class Program
     {
-		private JToken statuses = null;
-        private static string _address = "https://api.twitter.com/1.1/statuses/user_timeline.json?include_rts=true&screen_name=scottgu&count=20";
+        private static string _address = "https://api.twitter.com/1.1/search/tweets.json?q=%40twitterapi";
 
 		private static async Task<JToken> RunClient()
         {
@@ -50,16 +49,16 @@ namespace TwitterSample
         {
 			JToken feed = null;
 			feed = RunClient().Result;
-
-
+            
+            
 			Console.WriteLine("Most recent statuses from ScottGu's twitter account:");
 			Console.WriteLine();
 			foreach (var status in feed)
 			{
-				Console.WriteLine("   {0}", status["text"]);
+				Console.WriteLine("   {0}", status["statuses.entities.text"]);
 				Console.WriteLine();
 			}
-
+            
             Console.WriteLine("Hit ENTER to exit...");
             Console.ReadLine();
         }

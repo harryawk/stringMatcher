@@ -53,10 +53,10 @@ namespace TwitterSample
             
 			Console.WriteLine("Most recent statuses from ScottGu's twitter account:");
 			Console.WriteLine();
-			foreach (var status in feed)
+			foreach (var status in feed["statuses"])
 			{
-				Console.WriteLine("   {0}", status["statuses.entities.text"]);
-				Console.WriteLine();
+				Console.WriteLine("{0}", status["text"]);
+				Console.WriteLine("---------------------------------------");
 			}
             
             Console.WriteLine("Hit ENTER to exit...");

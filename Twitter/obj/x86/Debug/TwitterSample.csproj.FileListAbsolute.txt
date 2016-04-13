@@ -1,0 +1,9 @@
+C:\Users\CXXXV\Downloads\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\HttpClient\TwitterSample\bin\Debug\TwitterSample.exe.config
+C:\Users\CXXXV\Downloads\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\HttpClient\TwitterSample\bin\Debug\TwitterSample.exe
+C:\Users\CXXXV\Downloads\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\HttpClient\TwitterSample\bin\Debug\TwitterSample.pdb
+C:\Users\CXXXV\Downloads\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\HttpClient\TwitterSample\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CXXXV\Downloads\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\HttpClient\TwitterSample\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\CXXXV\Downloads\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\HttpClient\TwitterSample\bin\Debug\Newtonsoft.Json.xml
+C:\Users\CXXXV\Downloads\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\HttpClient\TwitterSample\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\CXXXV\Downloads\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\HttpClient\TwitterSample\obj\x86\Debug\TwitterSample.exe
+C:\Users\CXXXV\Downloads\aspnet-3f34254d5ebec499ba8bc470544c7d401f379406\Samples\HttpClient\TwitterSample\obj\x86\Debug\TwitterSample.pdb

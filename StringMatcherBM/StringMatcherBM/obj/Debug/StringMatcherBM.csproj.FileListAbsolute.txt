@@ -1,0 +1,2 @@
+c:\users\asus\documents\visual studio 2015\Projects\StringMatcherBM\StringMatcherBM\bin\Debug\StringMatcherBM.exe.config
+C:\Users\asus\Documents\GitHub\stringMatcher\StringMatcherBM\StringMatcherBM\bin\Debug\StringMatcherBM.exe.config

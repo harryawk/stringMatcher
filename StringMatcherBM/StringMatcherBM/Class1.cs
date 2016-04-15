@@ -10,19 +10,18 @@ namespace StringMatcherBM
     {
         private String teks;
         private String pattern = "";
-        //private int[] border;
+        private List<char> lastoccurence;
         private int currPIdx = 0;
         private int currTIdx = 0;
-        private
 
         /*public int getCharIdx(char x) {
             return 1;
         }*/
 
-        public kmpMatching(String teksInput)
+        public bmMatching(String teksInput)
         {
-
             setText(teksInput);
+            lastoccurence = new List<char>();
         }
 
         public bool isCharMatch(int teksIndeksKe, int patternIndeksKe)
@@ -40,92 +39,85 @@ namespace StringMatcherBM
             teks = text_input;
         }
 
+        public int getLastOcc(int TeksIdx)
+        {
+            if (lastoccurence.Contains(teks[TeksIdx]))
+            {
+                return lastoccurence.LastIndexOf(teks[TeksIdx]);
+            }
+            else
+            {
+                return -1;
+            }
+/*            int i = pattern.Length - 1;
+            while (i >= 0)
+            {
+                if(pattern[i] == teks[TeksIdx])
+                {
+                    return i;
+                }
+                i--;
+            }
+            return -1;*/
+        }
+
         public void setPattern(String pattern_input)
         {
             pattern = pattern_input;
-            border = new int[pattern_input.Length];
-            //==============SET BORDER FUNCTION=============================
-            //bool done = false;
-            border[0] = 0;
-            int k = 0;
-            for (int q = 1; q <= pattern.Length; q++)
-            {
-                if (k + 1 > pattern.Length)
-                {
-                    while (k > 0 && pattern[q] == pattern[k + 1])
-                    {
-                        k = border[k];
-                    }
-                    if (pattern[q] == pattern[k + 1])
-                    {
-                        k++;
-                    }
-                    border[q] = k;
-                }
-                else
-                {
-                    //Done
-                }
+            //set last occurence
+            lastoccurence.Clear();
+            for (int i = 0; i < pattern.Length; i++) {
+                lastoccurence.Add(pattern[i]);
             }
         }
 
-        public int borderFunction(int indeksMissmatch)
-        {
-            return border[indeksMissmatch];
-        }
+        /*        public int borderFunction(int indeksMissmatch)
+                {
+                    return border[indeksMissmatch];
+                }*/
 
-        public void matchString(String pattern_input)
+        public int matchString(String pattern_input)
         {
             setPattern(pattern_input);
-            bool finish = false;
-            //while (!finish) {
-            if (!finish && currTIdx <= teks.Length)
+
+            if(pattern.Length > teks.Length)
+            {
+//                Console.WriteLine("Tidak ditemukan, pattern lebih panjang dari teks");
+            }
+
+            bool found = false;
+            int patternlength = pattern.Length;
+            int tekslength = teks.Length;
+            currPIdx = patternlength - 1;
+            currTIdx = currPIdx;
+            int lo = 0;
+            do
             {
                 if (isCharMatch(currTIdx, currPIdx))
                 {
-                    currTIdx++;
-                    currPIdx++;
-                    Console.WriteLine(currPIdx);
-                    if (currPIdx != pattern.Length)
+                    if (currPIdx == 0)
                     {
-                        matchString(pattern_input);
+                        found = true;
+  //                      Console.WriteLine("Karakter ditemukan pada indeks ke {0}", currTIdx);
                     }
                     else
                     {
-                        //Done
-                        Console.WriteLine("Pattern Ketemu : "); Console.Write("Di indeks : "); Console.WriteLine(currTIdx - pattern.Length);
-                        currPIdx = 0;
-                        //for (int ii = 0; ii < pattern.Length; ii++) {
-                        //    for (int jj = 0; jj < ii; jj++) {
-                        //        Console.Write(pattern[jj]);
-                        //        Console.Write(" -> ");
-                        //    }
-
-                        //}
+                        currPIdx--;
+                        currTIdx--;
                     }
                 }
                 else
                 {
-                    Console.Write("Indeks Missmatch : "); Console.WriteLine(currTIdx);
-                    if (currTIdx == teks.Length - 1)
-                    {
-                        finish = true;
-                        //break;
-                    }
-                    currTIdx = currTIdx + borderFunction(currPIdx) + 1;
-                    currPIdx = 0;
-                    if (!finish)
-                    {
-                        matchString(pattern_input);
-                    }
-                    else
-                    {
-                        Console.Write("Pattern tidak ditemukan : \n Indeks Missmatch : "); Console.WriteLine(currTIdx);
-                    }
+                    lo = getLastOcc(currTIdx);
+                    currTIdx = currTIdx + patternlength - Math.Min(currPIdx, 1 + lo);
+                    currPIdx = patternlength - 1;
                 }
+            } while (currTIdx < tekslength && !found);
 
-            }
+            if (found)
+                return currTIdx;
+            else
+                return -1;
         }
-
     }
 }

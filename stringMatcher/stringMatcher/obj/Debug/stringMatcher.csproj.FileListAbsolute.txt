@@ -4,3 +4,9 @@ c:\users\harry alvin\documents\visual studio 2015\Projects\stringMatcher\stringM
 c:\users\harry alvin\documents\visual studio 2015\Projects\stringMatcher\stringMatcher\obj\Debug\stringMatcher.csprojResolveAssemblyReference.cache
 c:\users\harry alvin\documents\visual studio 2015\Projects\stringMatcher\stringMatcher\obj\Debug\stringMatcher.exe
 c:\users\harry alvin\documents\visual studio 2015\Projects\stringMatcher\stringMatcher\obj\Debug\stringMatcher.pdb
+C:\Users\Harry Alvin\Documents\GitHub\stringMatcher\stringMatcher\stringMatcher\bin\Debug\stringMatcher.exe.config
+C:\Users\Harry Alvin\Documents\GitHub\stringMatcher\stringMatcher\stringMatcher\obj\Debug\stringMatcher.exe
+C:\Users\Harry Alvin\Documents\GitHub\stringMatcher\stringMatcher\stringMatcher\obj\Debug\stringMatcher.pdb
+C:\Users\Harry Alvin\Documents\GitHub\stringMatcher\stringMatcher\stringMatcher\bin\Debug\stringMatcher.exe
+C:\Users\Harry Alvin\Documents\GitHub\stringMatcher\stringMatcher\stringMatcher\bin\Debug\stringMatcher.pdb
+C:\Users\Harry Alvin\Documents\GitHub\stringMatcher\stringMatcher\stringMatcher\obj\Debug\stringMatcher.csprojResolveAssemblyReference.cache

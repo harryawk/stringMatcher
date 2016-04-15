@@ -18,7 +18,7 @@ namespace TwitterSample
     /// </remarks>
     class Program
     {
-        private static string _address = "https://api.twitter.com/1.1/search/tweets.json?q=%40twitterapi";
+        private static string _address = "https://api.twitter.com/1.1/search/tweets.json?q=%40twitterapi&count=100";
 
 		private static async Task<JToken> RunClient()
         {
@@ -47,18 +47,22 @@ namespace TwitterSample
 
         static void Main(string[] args)
         {
+			int count = 0;
 			JToken feed = null;
 			feed = RunClient().Result;
-            
-            
-			Console.WriteLine("Most recent statuses from ScottGu's twitter account:");
+			Console.WriteLine("Json");
+			Console.WriteLine(feed);
+			Console.WriteLine("----------------------------------------");
+
+			Console.WriteLine("Most recent");
 			Console.WriteLine();
 			foreach (var status in feed["statuses"])
 			{
 				Console.WriteLine("{0}", status["text"]);
 				Console.WriteLine("---------------------------------------");
+				count++;
 			}
-            
+			Console.WriteLine(count);
             Console.WriteLine("Hit ENTER to exit...");
             Console.ReadLine();
         }

@@ -1,2 +1,7 @@
 c:\users\asus\documents\visual studio 2015\Projects\StringMatcherBM\StringMatcherBM\bin\Debug\StringMatcherBM.exe.config
 C:\Users\asus\Documents\GitHub\stringMatcher\StringMatcherBM\StringMatcherBM\bin\Debug\StringMatcherBM.exe.config
+C:\Users\asus\Documents\GitHub\stringMatcher\StringMatcherBM\StringMatcherBM\obj\Debug\StringMatcherBM.exe
+C:\Users\asus\Documents\GitHub\stringMatcher\StringMatcherBM\StringMatcherBM\obj\Debug\StringMatcherBM.pdb
+C:\Users\asus\Documents\GitHub\stringMatcher\StringMatcherBM\StringMatcherBM\bin\Debug\StringMatcherBM.exe
+C:\Users\asus\Documents\GitHub\stringMatcher\StringMatcherBM\StringMatcherBM\bin\Debug\StringMatcherBM.pdb
+C:\Users\asus\Documents\GitHub\stringMatcher\StringMatcherBM\StringMatcherBM\obj\Debug\StringMatcherBM.csprojResolveAssemblyReference.cache

@@ -8,10 +8,10 @@ namespace stringMatcher
 {
     class ProgramUtama { 
      public static void Main(string[] args) {
-      kmpMatching mesin = new kmpMatching("nobody noticed him");
+      kmpMatching mesin = new kmpMatching("aaahaaasaabaaaax");
             //mesin.setText("aaaaaaaaab");
             
-            mesin.matchString("not");
+            mesin.matchString("aaab");
       
             
       Console.WriteLine("\nPress return key to continue...");

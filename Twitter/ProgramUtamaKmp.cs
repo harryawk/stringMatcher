@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace stringMatcher
+namespace Tuittuit
 {
     class ProgramUtama { 
-     public static void Main(string[] args) {
+     public static void ProgramUtamaKMP(string[] args) {
       kmpMatching mesin = new kmpMatching("nobody noticed him");
             //mesin.setText("aaaaaaaaab");
             

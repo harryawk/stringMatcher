@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 using TwitterSample.OAuth;
 using System.Threading.Tasks;
 
-namespace TwitterSample
+namespace Tuittuit
 {
     /// <summary>
     /// Sample illustrating how to write a simple twitter client using HttpClient. The sample uses a 
@@ -18,7 +18,8 @@ namespace TwitterSample
     /// </remarks>
     class Program
     {
-        private static string _address = "https://api.twitter.com/1.1/search/tweets.json?q=%40twitterapi&count=100";
+		public static string b = "%40twitterapi";
+		private static string _address = "https://api.twitter.com/1.1/search/tweets.json?q="+b+"&count=100";
 
 		private static async Task<JToken> RunClient()
         {
@@ -47,6 +48,7 @@ namespace TwitterSample
 
         static void Main(string[] args)
         {
+			bmMatching mesin = new bmMatching ("wawa");
 			int count = 0;
 			JToken feed = null;
 			feed = RunClient().Result;
@@ -56,11 +58,27 @@ namespace TwitterSample
 
 			Console.WriteLine("Most recent");
 			Console.WriteLine();
-			foreach (var status in feed["statuses"])
+			foreach (JToken status in feed["statuses"])
 			{
-				Console.WriteLine("{0}", status["text"]);
-				Console.WriteLine("---------------------------------------");
-				count++;
+				if (mesin.BmSearch ("" + status ["text"], new String[]{"twitter", "DVD"}) == 0) {
+					Console.WriteLine ("---------------------------------------");
+					Console.WriteLine ("{0}", status ["text"]);
+					Console.WriteLine ("---------------------------------------");
+					count++;
+				} 
+				else if (mesin.BmSearch ("" + status ["text"], new String[]{"twitter", "DVD"}) == 1) {
+					Console.WriteLine ("=======================================");
+					Console.WriteLine ("{0}", status ["text"]);
+					Console.WriteLine ("=======================================");
+					count += 100;
+				} 
+				else
+				{
+					Console.WriteLine ("***************************************");
+					Console.WriteLine ("{0}", status ["text"]);
+					Console.WriteLine ("***************************************");
+				}
+
 			}
 			Console.WriteLine(count);
             Console.WriteLine("Hit ENTER to exit...");

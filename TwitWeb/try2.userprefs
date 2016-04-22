@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="try2\try2.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="ChromeHTML" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="try2\Program.cs">
+    <Files>
+      <File FileName="try2\Controllers\HomeController.cs" Line="1" Column="1" />
+      <File FileName="try2\ProgramUtama.cs" Line="1" Column="1" />
+      <File FileName="try2\kmpMatching.cs" Line="1" Column="1" />
+      <File FileName="try2\packages.config" Line="1" Column="1" />
+      <File FileName="try2\Program.cs" Line="46" Column="33" />
+      <File FileName="try2\ProgramBM.cs" Line="1" Column="1" />
+      <File FileName="try2\ProgramUtamaKmp.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

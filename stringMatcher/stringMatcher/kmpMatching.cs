@@ -15,6 +15,8 @@ namespace stringMatcher
         private int currTIdx = 0;
         private bool finish = false;
         private int sumMatch = 0;
+        private int start;
+        private int idxfinish;
         
         /*public int getCharIdx(char x) {
             return 1;
@@ -58,10 +60,10 @@ namespace stringMatcher
                     i++;
                 }
             }
-            for (int q = 0; q < pattern_input.Length; q++)
-            {
-                Console.WriteLine(border[q]);
-            }
+            //for (int q = 0; q < pattern_input.Length; q++)
+            //{
+            //    Console.WriteLine(border[q]);
+            //}
         }
         
         public int borderFunction(int indeksMissmatch)
@@ -69,36 +71,54 @@ namespace stringMatcher
             return border[indeksMissmatch];
         }
 
+        public int getStart()
+        {
+            return start;
+        }
+
+        public int getPatternLength()
+        {
+            return pattern.Length;
+        }
+
+        public int getFinish()
+        {
+            return idxfinish;
+        }
+
         public void matchString(String pattern_input) {
             setPattern(pattern_input);
-            Console.WriteLine("Teks : {0}",teks.Length);
+            //Console.WriteLine("Teks : {0}",teks.Length);
             int ibatas = teks.Length - pattern.Length;
             bool lewat = false;
             while (!finish && sumMatch < pattern.Length) {
                 if (isCharMatch(currTIdx, currPIdx)) { //Sama
-                    Console.WriteLine("Match :");
+                    //Console.WriteLine("Match :");
                     sumMatch++;
                     currPIdx++;
                     currTIdx++;
                     if (currPIdx >= pattern.Length && currTIdx >= teks.Length -1) {
                         finish = true;
-                        Console.WriteLine("Ketemu");
+                        //  Console.WriteLine("Ketemu");
+                        currTIdx--;
+                        start = currTIdx - pattern.Length+1;
+                        idxfinish = start + pattern.Length - 1;
+                        Console.WriteLine("Ketemu di {0} sampai {1}", start,idxfinish);
                     } else {
-
+                        //Console.WriteLine("Ketemu di {0}", currTIdx);
                     }
                 } else if (border[currPIdx] > 0 && currTIdx < teks.Length - pattern.Length) { //Ga Sama, border function > 0
                                                                                               //Maju sejauh borderFunction + 1
-                    Console.WriteLine("Missmatch1: {0}",currTIdx);
+                    //Console.WriteLine("Missmatch1: {0}",currTIdx);
                     sumMatch = 0;
-                    //currTIdx += borderFunction(currPIdx)+1;
                     currTIdx += borderFunction(currPIdx) +1;
                     currPIdx = 0;
                     if (currTIdx >= teks.Length && currPIdx >= pattern.Length-1) {
-                        Console.WriteLine("Not match");
+                      //  Console.WriteLine("Not match");
                         finish = true;
                     }
                 } else {
-                    Console.WriteLine("Missmatch2 :");
+                    //Console.WriteLine("Missmatch2 :");
                     sumMatch = 0;
                     if (currTIdx < teks.Length - pattern.Length) {
                             currTIdx++;
@@ -106,18 +126,19 @@ namespace stringMatcher
                         currTIdx = teks.Length - pattern.Length;
                         lewat = true;
                     } else {
-                        Console.WriteLine("Not match");
+                      //  Console.WriteLine("Not match");
                         finish = true;
                     }
                     currPIdx = 0;
                     if (currTIdx >= teks.Length && currPIdx >= pattern.Length - 1) {
                         finish = true;
-                        Console.WriteLine("Not match");
+                        //Console.WriteLine("Not match");
                     }
                 }
             }
         }
 
+        
     }
 }
 

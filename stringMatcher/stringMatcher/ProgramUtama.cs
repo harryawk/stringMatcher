@@ -11,7 +11,7 @@ namespace stringMatcher
       kmpMatching mesin = new kmpMatching("aaahaaasaabaaaab");
             Console.WriteLine("Panjang teks : {0}", "aaahaaasaabaaaab".Length);
             mesin.matchString("aaab");
-            Console.Write("String pattern yang didapat dari teks : ");
+            
             Console.WriteLine("mesin.getStart() : {0}", mesin.getStart());
             Console.WriteLine("mesin.getPatternLength() : {0}", mesin.getPatternLength());
             int d = mesin.getStart();
@@ -19,8 +19,8 @@ namespace stringMatcher
             int x = mesin.getFinish();
             Console.WriteLine("x : {0}",x );
             string s = "aaahaaasaabaaaab";
-            Console.WriteLine(s[d]);
-            int i = d;
+            Console.WriteLine("Test : {0}",s[d]);
+            Console.Write("String pattern yang didapat dari teks : ");
             for (int j = d; j <= x; j++) {
                 Console.Write(s[j]);
             }

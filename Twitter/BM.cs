@@ -114,7 +114,7 @@ namespace Tuittuit
                 return -1;
         }
 
-		public int BmSearch(String input, String[] pattern)
+		public int search(String input, String[] pattern)
 		{
 			setText (input);
 			int min = 99999999;

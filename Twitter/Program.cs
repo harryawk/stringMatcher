@@ -48,25 +48,26 @@ namespace Tuittuit
 
         static void Main(string[] args)
         {
-			bmMatching mesin = new bmMatching ("wawa");
+			//kmpMatching mesin = new kmpMatching ("wawa");
+			kmpMatching mesin = new kmpMatching ("wawa");
 			int count = 0;
 			JToken feed = null;
 			feed = RunClient().Result;
 			Console.WriteLine("Json");
-			Console.WriteLine(feed);
+			//Console.WriteLine(feed);
 			Console.WriteLine("----------------------------------------");
 
 			Console.WriteLine("Most recent");
 			Console.WriteLine();
 			foreach (JToken status in feed["statuses"])
 			{
-				if (mesin.BmSearch ("" + status ["text"], new String[]{"twitter", "DVD"}) == 0) {
+				if (mesin.search ("" + status ["text"], new String[]{"twitter", "prince"}) == 0) {
 					Console.WriteLine ("---------------------------------------");
 					Console.WriteLine ("{0}", status ["text"]);
 					Console.WriteLine ("---------------------------------------");
 					count++;
 				} 
-				else if (mesin.BmSearch ("" + status ["text"], new String[]{"twitter", "DVD"}) == 1) {
+				else if (mesin.search ("" + status ["text"], new String[]{"twitter", "prince"}) == 1) {
 					Console.WriteLine ("=======================================");
 					Console.WriteLine ("{0}", status ["text"]);
 					Console.WriteLine ("=======================================");
@@ -86,3 +87,4 @@ namespace Tuittuit
         }
     }
 }
+

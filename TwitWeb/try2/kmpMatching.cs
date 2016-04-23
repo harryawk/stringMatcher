@@ -60,10 +60,6 @@ namespace Tuittuit
                     i++;
                 }
             }
-            //for (int q = 0; q < pattern_input.Length; q++)
-            //{
-            //    Console.WriteLine(border[q]);
-            //}
         }
         
         public int borderFunction(int indeksMissmatch)
@@ -74,22 +70,17 @@ namespace Tuittuit
         
 
         public void matchString(String pattern_input) {
-			//start = 0;
-			//idxfinish = -1;
-
 			currPIdx = 0;
 			currTIdx = 0;
 			sumMatch = 0;
 			finish = false;
             setPattern(pattern_input);
-            //Console.WriteLine("Teks : {0}",teks.Length);
             int ibatas = teks.Length - pattern.Length;
             bool lewat = false;
             while (!finish && sumMatch < pattern.Length) {
                 if (isCharMatch(currTIdx, currPIdx)) { //Char pada currTIdx di teks sama dengan char pada currPIdx di pattern
                     sumMatch++;
                     currPIdx++;
-					//Console.Write("haha");
                     currTIdx++;
                     if (currPIdx >= pattern.Length || currTIdx >= teks.Length) { //Ketemu word
                         finish = true;
@@ -168,58 +159,3 @@ namespace Tuittuit
 		}  
     }
 }
-
-//int k = 0;
-//            for (int q = 1; q <= pattern.Length; q++) {
-//                //Console.WriteLine(++k);
-//                while (k >= 0 && pattern[q] == pattern[k]) {
-//                    k = border[k];
-//                }
-//                if (pattern[q] == pattern[k + 1]) {
-//                    k++;
-//                }
-//                border[q] = k;
-//            }
-
-//public void matchString(String pattern_input)
-//{
-//    setPattern(pattern_input);
-//    bool finish = false;
-//    //while (!finish) {
-//    if (!finish && currTIdx <= teks.Length)
-//    {
-//        if (isCharMatch(currTIdx, currPIdx))
-//        {
-//            currTIdx++;
-//            currPIdx++;
-//            Console.WriteLine(currPIdx);
-//            if (currPIdx != pattern.Length)
-//            {
-//                matchString(pattern_input);
-//            }
-//            else {
-//                //Done
-//                Console.WriteLine("Pattern Ketemu : "); Console.Write("Di indeks : "); Console.WriteLine(currTIdx - pattern.Length);
-//                currPIdx = 0;
-//            }
-//        }
-//        else {
-//            Console.Write("Indeks Missmatch : "); Console.WriteLine(currTIdx);
-//            if (currTIdx == teks.Length - 1)
-//            {
-//                finish = true;
-//                //break;
-//            }
-//            currTIdx = currTIdx + borderFunction(currPIdx) + 1;
-//            currPIdx = 0;
-//            if (!finish)
-//            {
-//                matchString(pattern_input);
-//            }
-//            else {
-//                Console.Write("Pattern tidak ditemukan : \n Indeks Missmatch : "); Console.WriteLine(currTIdx);
-//            }
-//        }
-
-//    }
-//}

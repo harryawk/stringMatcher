@@ -20,12 +20,12 @@ namespace Tuittuit
     public class Program
     {
 		//===========================================================member====================================
-		private ArrayList dinasPemakaman  = new ArrayList();
-		private ArrayList dinasPendidikan = new ArrayList();
-		private ArrayList dinasBinaMarga  = new ArrayList();
-		private ArrayList dinasKebersihan = new ArrayList();
-		private ArrayList dinasPerubungan = new ArrayList();
-		private ArrayList lainnya         = new ArrayList();
+		public ArrayList dinasPemakaman  = new ArrayList();
+		public ArrayList pdamBandung = new ArrayList();
+		public ArrayList dinasBinaMarga  = new ArrayList();
+		public ArrayList dinasKebersihan = new ArrayList();
+		public ArrayList dinasPerubungan = new ArrayList();
+		public ArrayList lainnya         = new ArrayList();
 		public static string b = "%40twitterapi";
 		private static string _address = "https://api.twitter.com/1.1/search/tweets.json?q="+b+"&count=100";
 
@@ -125,7 +125,24 @@ namespace Tuittuit
 			if (n == 0) {
 				dinasPemakaman.Add (s);
 			} else if (n == 1) {
-				dinasPendidikan.Add (s);
+				pdamBandung.Add (s);
+			} else if (n == 2) {
+				dinasBinaMarga.Add (s);
+			} else if (n == 3) {
+				dinasKebersihan.Add (s);
+			} else if (n == 4) {
+				dinasPerubungan.Add (s);
+			} else {
+				lainnya.Add (s);
+			}
+		}
+
+		public void addToCategory(int n, JToken s)
+		{
+			if (n == 0) {
+				dinasPemakaman.Add (s);
+			} else if (n == 1) {
+				pdamBandung.Add (s);
 			} else if (n == 2) {
 				dinasBinaMarga.Add (s);
 			} else if (n == 3) {
@@ -138,8 +155,8 @@ namespace Tuittuit
 		}
 
 		public void PrintValues( IEnumerable myList )  {
-			foreach (Object obj in myList) {
-				Console.WriteLine ("   {0}", obj);
+			foreach (JToken obj in myList) {
+				Console.WriteLine ("   {0}", obj["text"]);
 				Console.WriteLine ("==================================");
 			}
 		}
@@ -152,9 +169,9 @@ namespace Tuittuit
 			PrintValues(dinasPemakaman);
 
 			Console.WriteLine ("Pendidikan");
-			Console.WriteLine( "    Count:    {0}", dinasPendidikan.Count );
+			Console.WriteLine( "    Count:    {0}", pdamBandung.Count );
 			Console.WriteLine( "    Values:" );
-			PrintValues(dinasPendidikan);
+			PrintValues(pdamBandung);
 
 			Console.WriteLine ("BinaMarga");
 			Console.WriteLine( "    Count:    {0}", dinasBinaMarga.Count );
@@ -192,7 +209,7 @@ namespace Tuittuit
 			foreach (JToken status in feed["statuses"])
 			{
 				category = mesin.search ("" + status ["text"], keywords);
-				addToCategory (category, status ["text"].ToString());
+				addToCategory (category, status);
 			}
         }
 

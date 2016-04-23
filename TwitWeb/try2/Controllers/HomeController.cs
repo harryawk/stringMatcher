@@ -11,9 +11,9 @@ namespace Tuittuit
 	{
 		public ActionResult Index ()
 		{
-			//Program p = new Program ();
-			//p.tuitTuit ();
-			//p.printTweet ();
+//			Program p = new Program ();
+//			p.tuitTuit ();
+//			p.printTweet ();
 
 
 			var mvcName = typeof(Controller).Assembly.GetName ();
@@ -22,6 +22,28 @@ namespace Tuittuit
 			ViewData ["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
 			ViewData ["Runtime"] = isMono ? "Mono" : ".NET";
 
+			return View ();
+		}
+
+
+		public ActionResult Result (string TwitterSearchInput, string Input1, string Input2, string Input3, string Input4, string Input5)
+		{
+			Console.WriteLine (TwitterSearchInput);
+			Console.WriteLine (Input1);
+			Console.WriteLine (Input2);
+			Console.WriteLine (Input3);
+			Console.WriteLine (Input4);
+			Console.WriteLine (Input5);
+			return View ();
+		}
+
+		public ActionResult Help ()
+		{
+			return View ();
+		}
+
+		public ActionResult About ()
+		{
 			return View ();
 		}
 	}

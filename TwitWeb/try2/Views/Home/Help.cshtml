@@ -8,6 +8,27 @@
     <title>Help</title>
 </head>
 <body>
+	@{
+	string wa = "wa";
+	string value1 = "value1";
+	string value2 = "value2";
+	string value3 = "value3";
+	string value4 = "value4";
+	string value5 = "value5";
+	string value6 = "value6";
+	if(Request["Input1"] != null)
+	{
+		  wa = "wi";
+	      //Grab your value (since it exists)
+	      value1 = Request["Input1"];
+	      value2 = Request["Input2"];
+	      value3 = Request["Input3"];
+	      value4 = Request["Input4"];
+	      value5 = Request["Input5"];
+	      value6 = Request["TwitterSearchInput"];
+	}
+	}
+	<p>@wa @value1 @value6 @value2 @value3 @value4 @value5</p>
   <h1>test help</h1>
 </body>
 </html>

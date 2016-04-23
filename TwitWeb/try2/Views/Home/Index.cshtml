@@ -116,13 +116,21 @@
   </div>
   <!--beres header==========================================-->
 
+   @{
+  if(IsPost)
+  {
+
+  }
+  else
+  {
+  <form method="post" action="Home/Help">
   <div class="row">
     <div class="col-md-4">
 	  <div class="bs-component">
 		<br><br><br><br><br><br><br><br>
 	    <div class="form-group has-success label-floating">
 	      <label class="control-label" for="Input1">Dinas Pemakaman dan Pertamanan</label>
-          <input class="form-control" id="@Input1" type="text">
+          <input class="form-control" name="Input1" id="Input1" type="text">
         </div>
 	  </div>
 	</div>
@@ -131,7 +139,7 @@
 		<br><br><br><br><br><br><br><br>
 		<div class="form-group has-success label-floating">
           <label class="control-label" for="TwitterSearchInput">Masukkan kata kunci untuk pencarian twitter</label>
-          <input class="form-control" id="@TwitterSearchInput" type="text">
+          <input class="form-control" name="TwitterSearchInput" id="TwitterSearchInput" type="text">
         </div>
 	  </div>
 	</div>
@@ -140,7 +148,7 @@
 		<br><br><br><br><br><br><br><br>
 		<div class="form-group has-success label-floating">
           <label class="control-label" for="Input2">Dinas Bina Marga</label>
-          <input class="form-control" id="@Input2" type="text">
+          <input class="form-control" name="Input2" id="Input2" type="text">
         </div>
 	  </div>
 	</div>
@@ -149,7 +157,7 @@
 		<br><br><br><br><br><br><br><br>
 	    <div class="form-group has-success label-floating">
           <label class="control-label" for="Input3">Dinas Perhubungan</label>
-          <input class="form-control" id="@Input3" type="text">
+          <input class="form-control" name="Input3" id="Input3" type="text">
         </div>
 	  </div>
 	</div>
@@ -158,7 +166,7 @@
 		<br><br><br><br><br><br><br><br>
 		<div class="form-group has-success label-floating">
           <label class="control-label" for="Input4">Dinas Kebersihan</label>
-          <input class="form-control" id="@Input4" type="text">
+          <input class="form-control" name="Input4" id="Input4" type="text">
         </div>
 	  </div>
 	</div>
@@ -167,7 +175,7 @@
 		<br><br><br><br><br><br><br><br>
 	    <div class="form-group has-success label-floating">
           <label class="control-label" for="Input5">PDAM Bandung</label>
-          <input class="form-control" id="@Input5" type="text">
+          <input class="form-control" name="Input5" id="Input5" type="text">
         </div>
 	  </div>
 	</div>
@@ -193,14 +201,20 @@
 		  </div>
         </div> 
 		<p class="bs-component">
-		@Html.ActionLink("Analisis","Result","TwitterSearchInput","Input1","Input2","Input3","Input4","Input5")
-		<!--<a href="Result" class="btn btn-raised btn-primary" >Analisis</a>-->
+		@{
+			Program p = new Program ();
+			p.tuitTuit ();
+		}
+		<td><input type="submit" value="Analisis" id="Analisis" class="btn btn-raised btn-primary"></td>
 		</p>
 		<br><br><br>
 	</div>	
 	<div class="col-md-3">
 	</div>
   </div>
+  </form> 
+  }
+  }
 </div>
 
 

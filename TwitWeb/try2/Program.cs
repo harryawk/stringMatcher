@@ -17,7 +17,7 @@ namespace Tuittuit
     /// fill in the information in the OAuthMessageHandler class, see 
     /// http://dev.twitter.com/ for details.
     /// </remarks>
-    class Program
+    public class Program
     {
 		//===========================================================member====================================
 		private ArrayList dinasPemakaman  = new ArrayList();

@@ -11,9 +11,9 @@ namespace Tuittuit
 	{
 		public ActionResult Index ()
 		{
-			Program p = new Program ();
-			p.tuitTuit ();
-			p.printTweet ();
+			//Program p = new Program ();
+			//p.tuitTuit ();
+			//p.printTweet ();
 
 
 			var mvcName = typeof(Controller).Assembly.GetName ();

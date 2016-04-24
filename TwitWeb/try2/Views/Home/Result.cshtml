@@ -36,10 +36,29 @@
 </head>
 <body>
 
-@{
+	@{
+	string wa = "wa";
+	string value1 = "value1";
+	string value2 = "value2";
+	string value3 = "value3";
+	string value4 = "value4";
+	string value5 = "value5";
+	string valuekeyword = "value6";
+	if(Request["Input1"] != null)
+	{
+		  wa = "wi";
+	      //Grab your value (since it exists)
+	      value1 = Request["Input1"];
+	      value2 = Request["Input2"];
+	      value3 = Request["Input3"];
+	      value4 = Request["Input4"];
+	      value5 = Request["Input5"];
+	      valuekeyword = Request["TwitterSearchInput"];
+	}
+
 	Program p = new Program();
-	p.tuitTuit();
-}
+	p.tuitTuit(value1,value2,value3,value4,value5,valuekeyword);
+	}
 
 <!--navbar==================================================-->
 <div class="bs-docs-section clearfix">
@@ -111,7 +130,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Dinas Pemakaman dan Pertamanan</h3>
+              <h3 class="panel-title">Dinas Pemakaman dan Pertamanan ( @value1 )</h3>
             </div>
             <div class="panel-body">  <!--nanti diisi sama javasript atau cshtml Semangat!!!-->
 
@@ -122,10 +141,10 @@
 
 					@foreach (JToken obj in p.dinasPemakaman)
 					{
-				  		<a href=@obj["source"]+""><!---link twitternya-->
+				  		<a href= "https://twitter.com/@obj["user"]["screen_name"]/status/@obj["id_str"]"><!---link twitternya-->
 			  			<div class="list-group-item">
 			  		  	  <div class="row-picture">
-			  			    <img class="circle" src="@obj["profile_image_url"]" alt="icon">
+			  			    <img class="circle" src="@obj["user"]["profile_image_url"]" alt="icon">
 			  		  	  </div>
 			  		      <div class="row-content">
 			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <small>@obj["user"]["screen_name"]</small></h4>
@@ -149,7 +168,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Dinas Bina Marga</h3>
+              <h3 class="panel-title">Dinas Bina Marga ( @value2 )</h3>
             </div>
             <div class="panel-body">
 			  <div class="col-md-12">
@@ -159,13 +178,13 @@
 
 					@foreach (JToken obj in p.dinasBinaMarga)
 					{
-				  		<a href=@obj["source"]+""><!---link twitternya-->
+				  		<a href= "https://twitter.com/@obj["user"]["screen_name"]/status/@obj["id_str"]"><!---link twitternya-->
 			  			<div class="list-group-item">
 			  		  	  <div class="row-picture">
-			  			    <img class="circle" src="@obj["profile_image_url"]" alt="icon">
+			  			    <img class="circle" src="@obj["user"]["profile_image_url"]" alt="icon">
 			  		  	  </div>
 			  		      <div class="row-content">
-			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <h5>\@@obj["user"]["screen_name"]</h5></h4>
+			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <small>@obj["user"]["screen_name"]</small></h4>
 			  			  	<p class="list-group-item-text">@obj["text"]</p>
 			  		      </div>
 			  		    </div></a>
@@ -184,7 +203,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Dinas Perhubungan</h3>
+              <h3 class="panel-title">Dinas Perhubungan ( @value3 )</h3>
             </div>
             <div class="panel-body">
 			  <div class="col-md-12">
@@ -193,13 +212,13 @@
 
 					@foreach (JToken obj in p.dinasPerubungan)
 					{
-				  		<a href=@obj["source"]+""><!---link twitternya-->
+				  		<a href= "https://twitter.com/@obj["user"]["screen_name"]/status/@obj["id_str"]"><!---link twitternya-->
 			  			<div class="list-group-item">
 			  		  	  <div class="row-picture">
-			  			    <img class="circle" src="@obj["profile_image_url"]" alt="icon">
+			  			    <img class="circle" src="@obj["user"]["profile_image_url"]" alt="icon">
 			  		  	  </div>
 			  		      <div class="row-content">
-			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <h5>\@@obj["user"]["screen_name"]</h5></h4>
+			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <small>@obj["user"]["screen_name"]</small></h4>
 			  			  	<p class="list-group-item-text">@obj["text"]</p>
 			  		      </div>
 			  		    </div></a>
@@ -219,7 +238,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Dinas Kebersihan</h3>
+              <h3 class="panel-title">Dinas Kebersihan ( @value4 )</h3>
             </div>
             <div class="panel-body">
 			  <div class="col-md-12">
@@ -228,13 +247,13 @@
 
 					@foreach (JToken obj in p.dinasKebersihan)
 					{
-				  		<a href=@obj["source"]+""><!---link twitternya-->
+				  		<a href= "https://twitter.com/@obj["user"]["screen_name"]/status/@obj["id_str"]"><!---link twitternya-->
 			  			<div class="list-group-item">
 			  		  	  <div class="row-picture">
-			  			    <img class="circle" src="@obj["profile_image_url"]" alt="icon">
+			  			    <img class="circle" src="@obj["user"]["profile_image_url"]" alt="icon">
 			  		  	  </div>
 			  		      <div class="row-content">
-			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <h5>\@@obj["user"]["screen_name"]</h5></h4>
+			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <small>@obj["user"]["screen_name"]</small></h4>
 			  			  	<p class="list-group-item-text">@obj["text"]</p>
 			  		      </div>
 			  		    </div></a>
@@ -253,7 +272,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">PDAM Bandung</h3>
+              <h3 class="panel-title">PDAM Bandung ( @value5 )</h3>
             </div>
             <div class="panel-body">
 			  <div class="col-md-12">
@@ -262,13 +281,13 @@
 
 					@foreach (JToken obj in p.pdamBandung)
 					{
-				  		<a href=@obj["source"]+""><!---link twitternya-->
+				  		<a href= "https://twitter.com/@obj["user"]["screen_name"]/status/@obj["id_str"]"><!---link twitternya-->
 			  			<div class="list-group-item">
 			  		  	  <div class="row-picture">
-			  			    <img class="circle" src="@obj["profile_image_url"]" alt="icon">
+			  			    <img class="circle" src="@obj["user"]["profile_image_url"]" alt="icon">
 			  		  	  </div>
 			  		      <div class="row-content">
-			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <h5>\@@obj["user"]["screen_name"]</h5></h4>
+			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <small>@obj["user"]["screen_name"]</small></h4>
 			  			  	<p class="list-group-item-text">@obj["text"]</p>
 			  		      </div>
 			  		    </div></a>
@@ -296,13 +315,13 @@
 
 					@foreach (JToken obj in p.lainnya)
 					{
-				  		<a href=@obj["source"]+""><!---link twitternya-->
+				  		<a href= "https://twitter.com/@obj["user"]["screen_name"]/status/@obj["id_str"]"><!---link twitternya-->
 			  			<div class="list-group-item">
 			  		  	  <div class="row-picture">
-			  			    <img class="circle" src="@obj["profile_image_url"]" alt="icon">
+			  			    <img class="circle" src="@obj["user"]["profile_image_url"]" alt="icon">
 			  		  	  </div>
 			  		      <div class="row-content">
-			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <h5>\@@obj["user"]["screen_name"]</h5></h4>
+			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <small>@obj["user"]["screen_name"]</small></h4>
 			  			  	<p class="list-group-item-text">@obj["text"]</p>
 			  		      </div>
 			  		    </div></a>

@@ -36,7 +36,7 @@ namespace Tuittuit
 
         public void setText(String text_input)
         {
-            teks = text_input;
+			teks = text_input.ToLower();
         }
 
         public int getLastOcc(int TeksIdx)
@@ -63,7 +63,7 @@ namespace Tuittuit
 
         public void setPattern(String pattern_input)
         {
-            pattern = pattern_input;
+			pattern = pattern_input.ToLower();
             //set last occurence
             lastoccurence.Clear();
             for (int i = 0; i < pattern.Length; i++) {

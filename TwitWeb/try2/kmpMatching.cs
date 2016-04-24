@@ -28,7 +28,7 @@ namespace Tuittuit
         }
 
         public bool isCharMatch(int teksIndeksKe, int patternIndeksKe) {
-            return (pattern[patternIndeksKe] == teks[teksIndeksKe]);
+			return (pattern[patternIndeksKe]== teks[teksIndeksKe]);
         }
 
         public void geserSejauh(int x) {
@@ -37,12 +37,12 @@ namespace Tuittuit
 
         public void setText(String text_input)
         {
-            teks = text_input;
+			teks = text_input.ToLower();
         }
 
         public void setPattern(String pattern_input)
         {
-            pattern = pattern_input;
+			pattern = pattern_input.ToLower();
             border = new int[pattern_input.Length];
             //==============SET BORDER FUNCTION=============================
             //bool done = false;

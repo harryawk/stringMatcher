@@ -44,9 +44,9 @@ namespace Tuittuit
         }
 
 		//===========================================================helper====================================
-		public int[] makeKeywordsIndex(string[] Pemakaman, string[] Pendidikan, string[] BinaMarga, string[] Kebersihan, string[] Perubungan)
+		public int[] makeKeywordsIndex(string[] Pemakaman, string[] PDAMBandung, string[] BinaMarga, string[] Kebersihan, string[] Perubungan)
 		{
-			int[] n = new int[Pemakaman.Length + Pendidikan.Length + BinaMarga.Length + Kebersihan.Length + Perubungan.Length];
+			int[] n = new int[Pemakaman.Length + PDAMBandung.Length + BinaMarga.Length + Kebersihan.Length + Perubungan.Length];
 			int i = 0;
 
 			foreach (String temp in Pemakaman) 
@@ -55,7 +55,7 @@ namespace Tuittuit
 				i++;
 			}
 
-			foreach (String temp in Pendidikan) 
+			foreach (String temp in PDAMBandung) 
 			{
 				n [i] = 1;
 				i++;
@@ -82,9 +82,9 @@ namespace Tuittuit
 			return n;
 		}
 
-		public String[] makeKeywords(string[] Pemakaman, string[] Pendidikan, string[] BinaMarga, string[] Kebersihan, string[] Perubungan)
+		public String[] makeKeywords(string[] Pemakaman, string[] PDAMbandung, string[] BinaMarga, string[] Kebersihan, string[] Perubungan)
 		{
-			String[] n = new String[Pemakaman.Length + Pendidikan.Length + BinaMarga.Length + Kebersihan.Length + Perubungan.Length];
+			String[] n = new String[Pemakaman.Length + PDAMbandung.Length + BinaMarga.Length + Kebersihan.Length + Perubungan.Length];
 			int i = 0;
 
 			foreach (String temp in Pemakaman) 
@@ -93,7 +93,7 @@ namespace Tuittuit
 				i++;
 			}
 
-			foreach (String temp in Pendidikan) 
+			foreach (String temp in PDAMbandung) 
 			{
 				n [i] = temp;
 				i++;
@@ -194,17 +194,33 @@ namespace Tuittuit
 			PrintValues(lainnya);
 		}
 
+		public void setAddress(string s)
+		{
+			b = s;
+			_address = "https://api.twitter.com/1.1/search/tweets.json?q="+b+"&count=100";
+		}
+
+		public string getAddress()
+		{
+			return _address;
+		}
+
 		//===========================================================fungsi-Utama================================
-		public void tuitTuit()
+		public void tuitTuit(string input1,string input2,string input3,string input4,string input5,string inputkeyword)
         {
 			//kmpMatching mesin = new kmpMatching ("wawa");
 			kmpMatching mesin = new kmpMatching ("wawa");
 			int category = 0;
 			JToken feed = null;
-			int[] n = makeKeywordsIndex (new String[]{"twitter"}, new String[]{"prince"}, new String[]{}, new String[]{}, new String[]{});
-			String[] keywords = makeKeywords (new String[]{"twitter"}, new String[]{"prince"}, new String[]{}, new String[]{}, new String[]{});
+			string[] inputdinaspemakaman = input1.Split (';');
+			string[] inputdinasbinamarga = input2.Split (';');
+			string[] inputdinasperhubungan = input3.Split (';');
+			string[] inputdinaskebersihan = input4.Split (';');
+			string[] inputpdambandung = input5.Split (';');
+			int[] n = makeKeywordsIndex (inputdinaspemakaman, inputpdambandung, inputdinasbinamarga, inputdinaskebersihan, inputdinasperhubungan);
+			String[] keywords = makeKeywords (inputdinaspemakaman, inputpdambandung, inputdinasbinamarga, inputdinaskebersihan, inputdinasperhubungan);
 			feed = RunClient().Result;
-
+			setAddress(inputkeyword);
 
 			foreach (JToken status in feed["statuses"])
 			{

@@ -43,22 +43,23 @@
 	String value3 = "Kosong";
 	String value4 = "Kosong";
 	String value5 = "Kosong";
-	String valuekeyword = "Kosong";
+	String method = "KMP";
+	String valuekeyword = "twitter";
 	if(Request["Input1"] != null)
 	{
 		  wa = "wi";
 	      //Grab your value (since it exists)
 	      value1 = Request["Input1"];
-
-		      value2 = Request["Input2"];
-		      value3 = Request["Input3"];
-		      value4 = Request["Input4"];
-		      value5 = Request["Input5"];
-		      valuekeyword = Request["TwitterSearchInput"];
+	      value2 = Request["Input2"];
+	      value3 = Request["Input3"];
+	      value4 = Request["Input4"];
+	      value5 = Request["Input5"];
+	      valuekeyword = Request["TwitterSearchInput"];
+	      method = Request["AlgOption"];
 	}
 
 	Program p = new Program();
-	p.tuitTuit(value1,value2,value3,value4,value5,valuekeyword);
+	p.tuitTuit(method, value1,value2,value3,value4,value5,valuekeyword);
 	wa = p.getAddress();
 	}
 
@@ -132,7 +133,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Dinas Pemakaman dan Pertamanan ( @value1 )</h3>
+              <h3 class="panel-title">Dinas Pemakaman dan Pertamanan ( @value1 ) : @p.dinasPemakaman.Count</h3>
             </div>
             <div class="panel-body">  <!--nanti diisi sama javasript atau cshtml Semangat!!!-->
 
@@ -170,7 +171,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Dinas Bina Marga ( @value2 )</h3>
+              <h3 class="panel-title">Dinas Bina Marga ( @value2 ) : @p.dinasBinaMarga.Count</h3>
             </div>
             <div class="panel-body">
 			  <div class="col-md-12">
@@ -205,7 +206,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Dinas Perhubungan ( @value3 )</h3>
+              <h3 class="panel-title">Dinas Perhubungan ( @value3 ) : @p.dinasPerubungan.Count</h3>
             </div>
             <div class="panel-body">
 			  <div class="col-md-12">
@@ -240,7 +241,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Dinas Kebersihan ( @value4 )</h3>
+              <h3 class="panel-title">Dinas Kebersihan ( @value4 ) : @p.dinasKebersihan.Count</h3>
             </div>
             <div class="panel-body">
 			  <div class="col-md-12">
@@ -274,7 +275,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">PDAM Bandung ( @value5 )</h3>
+              <h3 class="panel-title">PDAM Bandung ( @value5 ) : @p.pdamBandung.Count</h3>
             </div>
             <div class="panel-body">
 			  <div class="col-md-12">
@@ -308,7 +309,7 @@
         <div class="bs-component">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Tidak Masuk Kategori</h3>
+              <h3 class="panel-title">Tidak Masuk Kategori : @p.lainnya.Count</h3>
             </div>
             <div class="panel-body">
 			  <div class="col-md-12">

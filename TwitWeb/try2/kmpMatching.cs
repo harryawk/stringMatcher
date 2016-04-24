@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tuittuit
 {
-    class kmpMatching
+	class kmpMatching:Matching
     {
         private String teks;
         private String pattern = "";
@@ -138,7 +138,7 @@ namespace Tuittuit
 			return idxfinish;
 		}
 
-		public int search(String input, String[] pattern)
+		int Matching.search(String input, String[] pattern)
 		{
 			setText (input);
 

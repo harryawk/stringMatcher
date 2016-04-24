@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tuittuit
 {
-    class bmMatching
+	class bmMatching:Matching
     {
         private String teks;
         private String pattern = "";
@@ -64,11 +64,13 @@ namespace Tuittuit
         public void setPattern(String pattern_input)
         {
 			pattern = pattern_input.ToLower();
-            //set last occurence
-            lastoccurence.Clear();
-            for (int i = 0; i < pattern.Length; i++) {
-                lastoccurence.Add(pattern[i]);
-            }
+			if(pattern_input.Length != 0){
+	            //set last occurence
+    	        lastoccurence.Clear();
+        	    for (int i = 0; i < pattern.Length; i++) {
+            	    lastoccurence.Add(pattern[i]);
+            	}
+			}
         }
 
         /*        public int borderFunction(int indeksMissmatch)
@@ -91,7 +93,7 @@ namespace Tuittuit
             currPIdx = patternlength - 1;
             currTIdx = currPIdx;
             int lo = 0;
-			if (pattern.Length <= teks.Length) {
+			if (pattern.Length <= teks.Length && teks.Length != 0 && pattern.Length != 0) {
 				do {
 					if (isCharMatch (currTIdx, currPIdx)) {
 						if (currPIdx == 0) {
@@ -114,7 +116,7 @@ namespace Tuittuit
                 return -1;
         }
 
-		public int search(String input, String[] pattern)
+		int Matching.search(String input, String[] pattern)
 		{
 			setText (input);
 			int min = 99999999;

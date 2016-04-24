@@ -226,11 +226,30 @@ namespace Tuittuit
 			return _address;
 		}
 
+		private int categoryIndex(int i, int[] n)
+		{
+			if (i < 0) {
+				return -1;
+			} 
+			else 
+			{
+				return n [i];
+			}
+		}
+
 		//===========================================================fungsi-Utama================================
-		public void tuitTuit(string input1,string input2,string input3,string input4,string input5,string inputkeyword)
+		public void tuitTuit(string method, string input1,string input2,string input3,string input4,string input5,string inputkeyword)
         {
 			//kmpMatching mesin = new kmpMatching ("wawa");
-			kmpMatching mesin = new kmpMatching ("wawa");
+			Matching mesin;
+
+			if (method == "KMP") {
+				mesin = new kmpMatching ("wawa");
+			} 
+			else //BM
+			{ 
+				mesin = new bmMatching ("wawa");
+			}
 			int category = 0;
 			JToken feed = null;
 			setAddress(inputkeyword);
@@ -250,7 +269,7 @@ namespace Tuittuit
 				//Console.WriteLine ("" + status ["text"], keywords);
 				category = mesin.search ("" + status ["text"], keywords);
 
-				addToCategory (category, status);
+				addToCategory (categoryIndex(category, n), status);
 			}
         }
 

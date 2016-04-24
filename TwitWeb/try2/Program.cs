@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Web;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using TwitterSample.OAuth;
@@ -196,8 +197,10 @@ namespace Tuittuit
 
 		public void setAddress(string s)
 		{
-			b = s;
-			_address = "https://api.twitter.com/1.1/search/tweets.json?q="+b+"&count=100";
+			b = HttpUtility.UrlEncode(s);
+			s = b.Replace ('+', ' ');
+			_address = "https://api.twitter.com/1.1/search/tweets.json?q="+s+"&count=100";
+
 		}
 
 		public string getAddress()
@@ -212,6 +215,8 @@ namespace Tuittuit
 			kmpMatching mesin = new kmpMatching ("wawa");
 			int category = 0;
 			JToken feed = null;
+			setAddress(inputkeyword);
+			Console.WriteLine ("wawawawawa: {0}", getAddress ());
 			string[] inputdinaspemakaman = input1.Split (';');
 			string[] inputdinasbinamarga = input2.Split (';');
 			string[] inputdinasperhubungan = input3.Split (';');
@@ -220,7 +225,7 @@ namespace Tuittuit
 			int[] n = makeKeywordsIndex (inputdinaspemakaman, inputpdambandung, inputdinasbinamarga, inputdinaskebersihan, inputdinasperhubungan);
 			String[] keywords = makeKeywords (inputdinaspemakaman, inputpdambandung, inputdinasbinamarga, inputdinaskebersihan, inputdinasperhubungan);
 			feed = RunClient().Result;
-			setAddress(inputkeyword);
+
 
 			foreach (JToken status in feed["statuses"])
 			{

@@ -37,13 +37,13 @@
 <body>
 
 	@{
-	string wa = "wa";
-	string value1 = "value1";
-	string value2 = "value2";
-	string value3 = "value3";
-	string value4 = "value4";
-	string value5 = "value5";
-	string valuekeyword = "value6";
+	String wa = "wa";
+	String value1 = "value1";
+	String value2 = "value2";
+	String value3 = "value3";
+	String value4 = "value4";
+	String value5 = "value5";
+	String valuekeyword = "value6";
 	if(Request["Input1"] != null)
 	{
 		  wa = "wi";
@@ -58,10 +58,12 @@
 
 	Program p = new Program();
 	p.tuitTuit(value1,value2,value3,value4,value5,valuekeyword);
+	wa = p.getAddress();
 	}
 
 <!--navbar==================================================-->
 <div class="bs-docs-section clearfix">
+	<p>wawawa: @wa</p>
     <div class="row">
       <div class="col-md-12">
         <div class="bs-component">

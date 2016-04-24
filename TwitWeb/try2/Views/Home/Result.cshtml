@@ -81,16 +81,17 @@
               </div>
               <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="javascript:void(0)">Home</a></li>
+	                   <li>@Html.ActionLink("Home","")</li>
                 </ul>
-                <form class="navbar-form navbar-left">
+                <form class="navbar-form navbar-left" action="Home/SearchResult" method="post">
                   <div class="form-group">
-                    <input type="text" class="form-control col-md-8" placeholder="Search">
+                    <input type="text" class="form-control col-md-8" name="searchkeyword" placeholder="Search">
+                    <input type="submit" style="visibility:hidden;">
                   </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="javascript:void(0)">Help</a></li>
-                  <li><a href="javascript:void(0)">About</a></li>
+	                  <li>@Html.ActionLink("Help","Help")</li>
+	                  <li>@Html.ActionLink("About","About")</li>
                 </ul>
               </div>
             </div>

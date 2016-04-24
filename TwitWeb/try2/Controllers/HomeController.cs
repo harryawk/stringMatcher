@@ -46,6 +46,11 @@ namespace Tuittuit
 		{
 			return View ();
 		}
+
+		public ActionResult SearchResult ()
+		{
+			return View ();
+		}	
 	}
 }
 

@@ -116,6 +116,16 @@
     <Content Include="Views\Home\Result.cshtml" />
     <Content Include="Views\Home\Help.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Content\css\bootstrap-material-design.css" />
+    <Content Include="Views\Home\Content\css\bootstrap-material-design.min.css" />
+    <Content Include="Views\Home\Content\css\ripples.css" />
+    <Content Include="Views\Home\Content\css\ripples.min.css" />
+    <Content Include="Views\Home\Content\js\material.js" />
+    <Content Include="Views\Home\Content\js\material.min.js" />
+    <Content Include="Views\Home\Content\js\ripples.js" />
+    <Content Include="Views\Home\Content\js\ripples.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -167,5 +177,11 @@
     <None Include="packages\Newtonsoft.Json.4.5.6\lib\winrt45\Newtonsoft.Json.dll" />
     <None Include="packages\Newtonsoft.Json.4.5.6\lib\winrt45\Newtonsoft.Json.xml" />
     <None Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Views\Home\Content\css\bootstrap-material-design.css.map" />
+    <None Include="Views\Home\Content\css\bootstrap-material-design.min.css.map" />
+    <None Include="Views\Home\Content\css\ripples.css.map" />
+    <None Include="Views\Home\Content\css\ripples.min.css.map" />
+    <None Include="Views\Home\Content\js\material.min.js.map" />
+    <None Include="Views\Home\Content\js\ripples.min.js.map" />
   </ItemGroup>
 </Project>

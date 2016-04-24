@@ -15,8 +15,8 @@ namespace Tuittuit
         private int currTIdx = 0;
         private bool finish = false;
         private int sumMatch = 0;
-        private int start;
-        private int idxfinish;
+        private int start = -1;
+        private int idxfinish = -1;
         
         /*public int getCharIdx(char x) {
             return 1;
@@ -41,25 +41,27 @@ namespace Tuittuit
         }
 
         public void setPattern(String pattern_input)
-        {
-			pattern = pattern_input.ToLower();
-            border = new int[pattern_input.Length];
-            //==============SET BORDER FUNCTION=============================
-            //bool done = false;
-            border[0] = 0;
-            int i = 1;
-            int j = 0;
-            while (i < pattern.Length) {
-                if (pattern[i] == pattern[j]) {
-                    border[i] = j + 1;
-                    i++;
-                    j++;
-                } else if (j > 0) {
-                    j = border[j - 1];
-                } else {
-                    i++;
-                }
-            }
+		{
+			pattern = pattern_input.ToLower ();
+			if (pattern_input.Length != 0) {
+				border = new int[pattern_input.Length];
+				//==============SET BORDER FUNCTION=============================
+				//bool done = false;
+				border [0] = 0;
+				int i = 1;
+				int j = 0;
+				while (i < pattern.Length) {
+					if (pattern [i] == pattern [j]) {
+						border [i] = j + 1;
+						i++;
+						j++;
+					} else if (j > 0) {
+						j = border [j - 1];
+					} else {
+						i++;
+					}
+				}
+			}
         }
         
         public int borderFunction(int indeksMissmatch)

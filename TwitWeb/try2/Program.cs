@@ -50,75 +50,93 @@ namespace Tuittuit
 			int[] n = new int[Pemakaman.Length + PDAMBandung.Length + BinaMarga.Length + Kebersihan.Length + Perubungan.Length];
 			int i = 0;
 
-			foreach (String temp in Pemakaman) 
-			{
-				n [i] = 0;
-				i++;
-			}
+			if (Pemakaman.Length + PDAMBandung.Length + BinaMarga.Length + Kebersihan.Length + Perubungan.Length != 0) {
+				if (Pemakaman.Length != 0) {
+					foreach (String temp in Pemakaman) {
+						n [i] = 0;
+						i++;
+					}
+				}
 
-			foreach (String temp in PDAMBandung) 
-			{
-				n [i] = 1;
-				i++;
-			}
+				if (PDAMBandung.Length != 0) {
+					foreach (String temp in PDAMBandung) {
+						n [i] = 1;
+						i++;
+					}
+				}
 
-			foreach (String temp in BinaMarga) 
-			{
-				n [i] = 2;
-				i++;
-			}
+				if (BinaMarga.Length != 0) {
+					foreach (String temp in BinaMarga) {
+						n [i] = 2;
+						i++;
+					}
+				}
 
-			foreach (String temp in Kebersihan) 
-			{
-				n [i] = 3;
-				i++;
-			}
+				if (Kebersihan.Length != 0) {
+					foreach (String temp in Kebersihan) {
+						n [i] = 3;
+						i++;
+					}
+				}
 
-			foreach (String temp in Perubungan) 
-			{
-				n [i] = 4;
-				i++;
-			}
+				if (Perubungan.Length != 0) {
+					foreach (String temp in Perubungan) {
+						n [i] = 4;
+						i++;
+					}
+				}
 
-			return n;
+				return n;
+			} else {
+				return null;
+			}
 		}
 
-		public String[] makeKeywords(string[] Pemakaman, string[] PDAMbandung, string[] BinaMarga, string[] Kebersihan, string[] Perubungan)
+		public String[] makeKeywords(string[] Pemakaman, string[] PDAMBandung, string[] BinaMarga, string[] Kebersihan, string[] Perubungan)
 		{
-			String[] n = new String[Pemakaman.Length + PDAMbandung.Length + BinaMarga.Length + Kebersihan.Length + Perubungan.Length];
+			String[] n = new String[Pemakaman.Length + PDAMBandung.Length + BinaMarga.Length + Kebersihan.Length + Perubungan.Length];
 			int i = 0;
 
-			foreach (String temp in Pemakaman) 
-			{
-				n [i] = temp;
-				i++;
-			}
+			if (Pemakaman.Length + PDAMBandung.Length + BinaMarga.Length + Kebersihan.Length + Perubungan.Length != 0) {
+				if (Pemakaman.Length != 0) {
+					foreach (String temp in Pemakaman) {
+						n [i] = temp;
+						i++;
+					}
+				}
 
-			foreach (String temp in PDAMbandung) 
-			{
-				n [i] = temp;
-				i++;
-			}
+				if (PDAMBandung.Length != 0) {
+					foreach (String temp in PDAMBandung) {
+						n [i] = temp;
+						i++;
+					}
+				}
 
-			foreach (String temp in BinaMarga) 
-			{
-				n [i] = temp;
-				i++;
-			}
+				if (BinaMarga.Length != 0) {
+					foreach (String temp in BinaMarga) {
+						n [i] = temp;
+						i++;
+					}
+				}
 
-			foreach (String temp in Kebersihan) 
-			{
-				n [i] = temp;
-				i++;
-			}
+				if (Kebersihan.Length != 0) {
+					foreach (String temp in Kebersihan) {
+						n [i] = temp;
+						i++;
+					}
+				}
 
-			foreach (String temp in Perubungan) 
-			{
-				n [i] = temp;
-				i++;
-			}
+				if (Perubungan.Length != 0) {
+					foreach (String temp in Perubungan) {
+						n [i] = temp;
+						i++;
+					}
+				}
 
-			return n;
+				return n;
+			} else {
+				return null;
+			}
 		}
 
 		public void addToCategory(int n, String s)
@@ -229,7 +247,9 @@ namespace Tuittuit
 
 			foreach (JToken status in feed["statuses"])
 			{
+				//Console.WriteLine ("" + status ["text"], keywords);
 				category = mesin.search ("" + status ["text"], keywords);
+
 				addToCategory (category, status);
 			}
         }

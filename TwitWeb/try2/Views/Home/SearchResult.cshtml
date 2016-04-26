@@ -143,7 +143,31 @@
 			  			  	<h4 class="list-group-item-heading">@obj["user"]["name"]  <small>@obj["user"]["screen_name"]</small></h4>
 			  			  	<p class="list-group-item-text">@obj["text"]</p>
 			  		      </div>
-				  		  <a href= "https://twitter.com/@obj["user"]["screen_name"]/status/@obj["id_str"]" class="btn btn-primary btn-lg" style="align:right">Link</a>
+			  		      @{
+			  		      	kmpMatching mesin = new kmpMatching("wawa");
+			  		      	String[] keywords = {" di "," jalan "," jln "," jl "};
+			  		      	String teks = ""+status["text"];
+							int indexpalingkecil = mesin.search (teks, keywords);
+						  }
+						  @if(indexpalingkecil != (-1)){
+						  	@{ String word1 = teks.Substring(indexpalingkecil);
+						  		String[] word2 = word1.Split(' ');
+						  		String lokasi = word2[1];
+						  		if(lokasi = "jalan" || lokasi = "jln" || lokasi = "jl"){
+						  			lokasi = word2[2];
+						  		}  
+						  		Program.locationkey = lokasi;
+						  	}
+		  	                <form class="navbar-form navbar-left" action="Home/SearchResult" method="post">
+        			          <div class="form-group">
+                    			<input type="text" class="form-control col-md-8" name="searchkeyword" placeholder="Search">
+                    			<input type="submit" style="visibility:hidden;">
+                  			  </div>
+                			</form>
+
+
+						  } 
+				  		  <a href= "https://twitter.com/@obj["user"]["screen_name"]/status/@obj["id_str"]" class="btn btn-primary btn-lg" style="float:right">Link</a>
 			  		    </div>
 			 		    <div class="list-group-separator"></div>
 			 		}

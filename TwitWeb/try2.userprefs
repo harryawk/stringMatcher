@@ -1,16 +1,22 @@
 ﻿<Properties StartupItem="try2\try2.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="ChromeHTML" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\..\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets">
+  <MonoDevelop.Ide.Workbench ActiveDocument="try2\Views\Home\Location.cshtml">
     <Files>
-      <File FileName="try2\Views\Home\Index.cshtml" Line="184" Column="15" />
-      <File FileName="try2\Views\Home\About.cshtml" Line="81" Column="100" />
-      <File FileName="try2\Views\Home\Help.cshtml" Line="1" Column="1" />
-      <File FileName="try2\Views\Home\Result.cshtml" Line="156" Column="20" />
-      <File FileName="..\..\..\..\..\..\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" Line="1819" Column="5" />
+      <File FileName="try2\Views\Home\Result.cshtml" Line="312" Column="44" />
+      <File FileName="try2\Views\Home\Index.cshtml" Line="81" Column="1" />
+      <File FileName="try2\Views\Home\SearchResult.cshtml" Line="173" Column="8" />
+      <File FileName="try2\Views\Home\Content\css\bootstrap-material-design.css" Line="2161" Column="13" />
+      <File FileName="try2\Program.cs" Line="32" Column="43" />
+      <File FileName="try2\kmpMatching.cs" Line="91" Column="64" />
+      <File FileName="try2\Views\Home\Location.cshtml" Line="86" Column="100" />
+      <File FileName="try2\Views\Home\Help.cshtml" Line="10" Column="55" />
+      <File FileName="try2\Controllers\HomeController.cs" Line="19" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\asus\Documents\GitHub\stringMatcher\TwitWeb\try2\Views\Home\Content\css\bootstrap-material-design.css" line="11" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

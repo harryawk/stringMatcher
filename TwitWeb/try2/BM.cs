@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tuittuit
 {
-	class bmMatching:Matching
+	public class bmMatching:Matching
     {
         private String teks;
         private String pattern = "";

@@ -27,6 +27,7 @@ namespace Tuittuit
 		public ArrayList dinasKebersihan = new ArrayList();
 		public ArrayList dinasPerubungan = new ArrayList();
 		public ArrayList lainnya         = new ArrayList();
+		public static string locationkey = "";
 		public static string b = "%40twitterapi";
 		private static string _address = "https://api.twitter.com/1.1/search/tweets.json?q="+b+"&count=100";
 
@@ -272,6 +273,10 @@ namespace Tuittuit
 				addToCategory (categoryIndex(category, n), status);
 			}
         }
+
+		public static String getlocationkey(){
+			return locationkey;
+		}
 
 		public static void Main(String[] args)
 		{

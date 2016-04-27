@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tuittuit
 {
-	class kmpMatching:Matching
+	public class kmpMatching:Matching
     {
         private String teks;
         private String pattern = "";

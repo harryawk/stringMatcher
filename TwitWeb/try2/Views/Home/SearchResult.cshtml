@@ -144,30 +144,37 @@
 			  			  	<p class="list-group-item-text">@obj["text"]</p>
 			  		      </div>
 			  		      @{
-			  		      	kmpMatching mesin = new kmpMatching("wawa");
-			  		      	String[] keywords = {" di "," jalan "," jln "," jl "};
-			  		      	String teks = ""+status["text"];
-							int indexpalingkecil = mesin.search (teks, keywords);
-						  }
+			  		      	Matching mesin = new kmpMatching("wawa");
+			  		      	String[] keywords = {" di "," jalan "," jln "," jl "," jl."," jln."};
+			  		      	String teks = "" + obj["text"];
+							int indexpalingkecil = mesin.search (teks,keywords);
+						   }
+				  		  <a href= "https://twitter.com/@obj["user"]["screen_name"]/status/@obj["id_str"]" class="btn btn-primary btn-lg" style="float:right">Link</a>
 						  @if(indexpalingkecil != (-1)){
-						  	@{ String word1 = teks.Substring(indexpalingkecil);
-						  		String[] word2 = word1.Split(' ');
-						  		String lokasi = word2[1];
-						  		if(lokasi = "jalan" || lokasi = "jln" || lokasi = "jl"){
-						  			lokasi = word2[2];
+						  		String parser = "";
+						  		if(mesin.search(teks,new String[]{" di "})==indexpalingkecil) {
+						  			parser = " di "; }
+						  		else if(mesin.search(teks,new String[]{" jalan "})==indexpalingkecil) {
+						  			parser = " jalan "; }
+						  		else if(mesin.search(teks,new String[]{" jln "})==indexpalingkecil) {
+						  			parser = " jln "; }
+						  		else if(mesin.search(teks,new String[]{" jln."})==indexpalingkecil) {
+						  			parser = " jln."; }
+						  		else if(mesin.search(teks,new String[]{" jl "})==indexpalingkecil){
+						  			parser = " jl "; }
+						  		else if(mesin.search(teks,new String[]{" jl."})==indexpalingkecil){
+						  			parser = " jl. "; }
+
+							  	String[] word1 = Regex.Split(teks,parser);
+						  		String[] word2 = word1[1].Split(' ');
+						  		String lokasi = word2[0];
+						  		if((lokasi == "jalan") || (lokasi == "jln") || (lokasi == "jl") || (lokasi == "jln.") || (lokasi == "jl.")){
+						  			lokasi = word2[0] + "+" + word2[1];
 						  		}  
 						  		Program.locationkey = lokasi;
-						  	}
-		  	                <form class="navbar-form navbar-left" action="Home/SearchResult" method="post">
-        			          <div class="form-group">
-                    			<input type="text" class="form-control col-md-8" name="searchkeyword" placeholder="Search">
-                    			<input type="submit" style="visibility:hidden;">
-                  			  </div>
-                			</form>
-
-
+						  		<p>Lokasi: @lokasi ,Bandung</p>
+					  			<img src="https://maps.googleapis.com/maps/api/staticmap?center=@lokasi&zoom=15&size=400x400" />
 						  } 
-				  		  <a href= "https://twitter.com/@obj["user"]["screen_name"]/status/@obj["id_str"]" class="btn btn-primary btn-lg" style="float:right">Link</a>
 			  		    </div>
 			 		    <div class="list-group-separator"></div>
 			 		}

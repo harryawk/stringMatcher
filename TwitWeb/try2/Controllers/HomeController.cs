@@ -51,6 +51,11 @@ namespace Tuittuit
 		{
 			return View ();
 		}	
+
+		public ActionResult Location ()
+		{
+			return View ();
+		}	
 	}
 }
 

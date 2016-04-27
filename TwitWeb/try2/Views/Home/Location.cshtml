@@ -34,12 +34,7 @@
 </head>
 <body>
 	@{
-		String location = "Bandung";
-		if(Request["lockeyword"] != null)
-		{
-		      //Grab your value (since it exists)
-		      location = Request["lockeyword"];
-		}
+		String location = Program.getlocationkey() + ",Bandung";
 	}
 	<!--navbar==================================================-->
 	<div class="bs-docs-section clearfix">
@@ -77,16 +72,10 @@
 		          <div class="row">
 					<div class="col-md-12">
 					  <div class="bs-component">
-				        <div class="jumbotron">
+				        <div class="jumbotron" style="text-align:center">
 				        <!-- insert code here -->
-				        	@{
-				        	  Program p = new Program();
-							  String loc = Program.locationkey;
-		
-							  JToken feed = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+loc+",&types=geocode&language=id&key=YOUR_API_KEY";
-							} 				        	
-
-
+				        	<h3>@location</h3>
+				        	<img src="https://maps.googleapis.com/maps/api/staticmap?center=@location&zoom=15&size=400x400" />
 				        </div>
 					  </div>
 					</div>
